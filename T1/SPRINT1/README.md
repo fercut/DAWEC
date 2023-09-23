@@ -67,8 +67,7 @@ En el documento insertaremos un texto indicando en que ejercicio estamos.
 <img src='./Imagenes&videos/Ejercicio3.jpg'>
 <br/>
 
-**Ejercicio 4**, el documento gif esta a su dispocicion en la carpeta imagenes&videos de este repositorio:
-
+**Ejercicio 4:**
 
 <img src='./Imagenes&videos/ejercicio4.gif'>
 <br/>
