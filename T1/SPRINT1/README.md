@@ -44,8 +44,7 @@ Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.
 ---
 
 >Crearemos un documento HTML por cada ejecicio (5 documentos) que estaran dentro de la carpeta SPRINT1.
-Realizaremos capturas de los ejercicios estaticos y videos de los ejercicios que sean dinamicos en formato .gif para comprobar su correcto funcionamiento.
-Como son ejercicos tan basicos cargaremos el 'script' dentro del documento HTML ya que los resultados se mostraran por consola, exeptuando el ejercicio 4 que se mostraran diferentes popups.
+Realizaremos capturas de los ejercicios estaticos y videos de los ejercicios que sean dinamicos en formato .gif para comprobar su correcto funcionamiento. Como son ejercicos tan basicos cargaremos el 'script' dentro del documento HTML ya que los resultados se mostraran por consola, exeptuando el ejercicio 4 que se mostraran diferentes popups.
 En el documento insertaremos un texto indicando en que ejercicio estamos.
 
 <br/>
@@ -70,7 +69,7 @@ En el documento insertaremos un texto indicando en que ejercicio estamos.
 
 **Ejercicio 4:**
 
-<img src='./Imagenes&videos/Ejercicio4.gif'>
+<img src='./Imagenes&videos/Ejercicio4.gif' alt='ejercicio4'>
 <br/>
 
 **Ejercicio 5:**
