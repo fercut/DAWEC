@@ -1,6 +1,6 @@
 # SPRINT 1 
 ---
-#### JAVASCRIPT BASICO
+## JAVASCRIPT BASICO
 
 :mag: Analisis del problema
 ---
