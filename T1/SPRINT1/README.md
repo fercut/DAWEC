@@ -1,8 +1,7 @@
 # SPRINT 1 
 ---
-## JAVASCRIPT BASICO <img src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" alt="Logo de JavaScript" width="25">
-
-
+## JAVASCRIPT BASICO  <img src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" alt="Logo de JavaScript" width="25">
+<br/>
 
 :mag: Analisis del problema.
 ---
@@ -33,6 +32,8 @@ Objetivo: Implementar bucles para repetir acciones múltiples veces.
 Escribir un bucle que muestre en la consola los números del 1 al 10.
 Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.  
 
+<br/>
+
 ✏️Diseño de la solucion.
 ---
 Lo primero sera crear un repositorio en Github como nos ha indicado el profesor, hacerlo privado y añadirle como colaborador. Despues crear la estructura de carpetas como ha indicado. Y por ultimo ir subiendo a git todos los documentos
@@ -40,6 +41,8 @@ Lo primero sera crear un repositorio en Github como nos ha indicado el profesor,
 Como son ejercicos tan basicos cargaremos el 'script' dentro del documento HTML ya que los resultados se mostraran por consola, exeptuando el ejercicio 4 que se mostraran diferentes popups.
 
 En el documento insertaremos un texto indicando en que ejercicio estamos.
+
+<br/>
 
 📝 Implementación de la solución.
 ---
