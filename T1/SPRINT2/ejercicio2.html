@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 2</title>
+    <style>
+    </style>
+    <script>
+        
+        const calcularArea = () => {
+
+            const x = parseInt(document.getElementById('ancho').value);
+            const y = parseInt(document.getElementById('alto').value);
+
+            if (!isNaN(x) && !isNaN(y) && x > 0 && y > 0) {
+                // Calcular el área
+                const area = x * y;
+            
+                // Mostrar el resultado
+                document.getElementById('resultado').innerText = 'El área es: ' + area;
+              } else {
+                // Si los valores no son válidos, mostrar un mensaje de error
+                document.getElementById('resultado').innerText = 'Ingresa valores de ancho y alto válidos.';
+              }
+            
+        }
+    </script>
+  </head>
+  <body>
+    <div>
+        <h1>Area de un rectangulo</h1>
+        <label for="ancho">Ancho</label>
+        <input type="text" name="ancho" id="ancho">
+        <br>
+
+        <label for="alto">Alto</label>
+        <input type="text" name="alto" id="alto">
+        <br>
+
+        <button onclick="calcularArea()">Calcular Area</button>
+        <br>
+
+        <p id="resultado"></p>
+
+    </div>
+  </body>
+</html>
