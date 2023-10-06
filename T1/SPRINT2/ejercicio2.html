@@ -13,16 +13,14 @@
             const y = parseInt(document.getElementById('alto').value);
 
             if (!isNaN(x) && !isNaN(y) && x > 0 && y > 0) {
-                // Calcular el área
+                
                 const area = x * y;
             
-                // Mostrar el resultado
                 document.getElementById('resultado').innerText = 'El área es: ' + area;
-              } else {
-                // Si los valores no son válidos, mostrar un mensaje de error
+            } else {
+                
                 document.getElementById('resultado').innerText = 'Ingresa valores de ancho y alto válidos.';
-              }
-            
+            }
         }
     </script>
   </head>
