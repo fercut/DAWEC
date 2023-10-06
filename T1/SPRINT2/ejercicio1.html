@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 1</title>
+    <style>
+    </style>
+    <script>
+        const cambiaColor = () => {
+            const color = [
+                Math.floor(Math.random()*255),
+                Math.floor(Math.random()*255),
+                Math.floor(Math.random()*255),
+            ];
+
+            document.body.style.backgroundColor = `rgb(${color.join(', ')})`
+        }
+    </script>
+  </head>
+  <body>
+    <div>
+        <button onclick="cambiaColor()">Cambia de color</button>
+    </div>
+  </body>
+</html>
