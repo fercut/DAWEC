@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 3</title>
+    <style>
+    </style>
+    <script>
+        
+        const añadir = () => {
+            const lista = document.getElementById('lista');
+            const articulo = document.getElementById('articulo').value;
+
+            const nuevoArticulo = document.createElement('li');
+            nuevoArticulo.textContent = articulo;
+
+            lista.appendChild(nuevoArticulo);
+            document.getElementById('articulo').value = '';
+        };
+        
+        const borrar = () => {
+            const lista = document.getElementById('lista');
+            lista.innerHTML = '';
+        };
+    </script>
+   </head>
+  <body>
+        <h1>Lista de la compra</h1>
+        <div>
+            <ul id="lista"></ul>
+            <br>
+            <label for="articulo">Articulo a añadir</label>
+            <input type="text" id="articulo">
+            <br>
+            <button onclick="añadir()">Añadir</button>
+            <button onclick="borrar()">Borrar lista</button>
+        </div>
+  </body>
+</html>

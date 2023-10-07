@@ -16,11 +16,13 @@
                 
                 const area = x * y;
             
-                document.getElementById('resultado').innerText = 'El área es: ' + area;
+                document.getElementById('resultado').innerText = `El area del rectangulo con un ancho de ${x} y un alto de ${y} es: ${area}`;
             } else {
                 
                 document.getElementById('resultado').innerText = 'Ingresa valores de ancho y alto válidos.';
             }
+            document.getElementById('ancho').value = '';
+            document.getElementById('alto').value = '';
         }
     </script>
   </head>
