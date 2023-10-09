@@ -26,18 +26,23 @@
 ---
 
 **Ejercicio 1:** cambia el fondo de color.
+
 <img src='./imagenes/ejercicio1.gif'>
 
 **Ejercicio 2:** calcula el area de un rectangulo.
+
 <img src='./imagenes/ejercicio2.gif'>
 
 **Ejercicio 3:** Lista de la compra.
+
 <img src='./imagenes/ejercicio3.gif'>
 
 **Ejercicio 4:** cambia colores de elementos con 'mouseover' y restablece con 'mouseout'. 
+
 <img src='./imagenes/ejercicio4.gif'>
 
 **Ejercicio 5:** recoge el XPath de cada elemento que se cliquea
+
 <img src='./imagenes/ejercicio5.gif'>
 
 
