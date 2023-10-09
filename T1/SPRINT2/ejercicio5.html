@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 5</title>
+    <style>
+    </style>
+   </head>
+  <body>
+    <header>
+        <h1>Ejercicio 5</h1>
+    </header>
+     <div>
+        <h2>Punto 1</h2>
+        <p><strong>Detección de Clics</strong></p>
+        <p>Añade un evento de escucha a todo el documento</p>
+        <p>Detecta los clicks con `event.target`</p>
+     </div>
+     <div>
+        <h2>Punto2</h2>
+        <p><strong>Generacion de XPath</strong></p>
+        <p>Una vez identificado el elemento, genera su XPath</p>
+        <p>Muestra el XPath generado</p>
+     </div>
+     <div>
+        <button>Boton 1</button>
+        <button>Boton 2</button>
+        <button>Boton 3</button>
+        <button>Boton 4</button>
+     </div>
+     <div>
+        <br>
+        <label for="xpath">Aqui veremos los XPath de los clicks  </label>
+        <input type="text" size="100" id="input">
+     </div>
+     <script>
+        function getXPath(elemento) {
+            const idx = (sib, name) => sib
+                ? idx(sib.previousElementSibling, name || sib.localName) + (sib.localName == name)
+                : 1;
+            const segs = elm => !elm || elm.nodeType !== 1
+                ? ['']
+                : elm.id && document.getElementById(elm.id) === elm
+                    ? [`id("${elm.id}")`]
+                    : [...segs(elm.parentNode), `${elm.localName.toLowerCase()}[${idx(elm)}]`];
+            return segs(elemento).join('/');
+        }
+        document.addEventListener('click', (event) => {
+            const elemento = event.target;
+            const xpath = getXPath(elemento);
+            const input = document.getElementById('input').value = xpath;
+        })
+     </script>
+  </body>
+</html>
