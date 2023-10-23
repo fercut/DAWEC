@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 3</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicio 3</h1>
+    <h2>Fusión de objetos sin duplicados</h2>
+    <hr>
+    <script>
+        const obj1 = {a: 1, b: 2, c: 3, d: 4};
+        const obj2 = {b: 4, z: 3};
+
+        const fusionador = (obj1, obj2) => {
+            const fusion = {...obj1, ...obj2};
+            return fusion;
+        }
+        console.log(fusionador(obj1,obj2));
+
+    </script>
+  </body>
+</html>

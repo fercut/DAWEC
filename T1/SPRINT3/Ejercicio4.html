@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 4</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>Ejercicio 4</h1>
+    <h2>Cadena más larga en un array</h2>
+    <hr>
+    <script>
+        const cadenas = ["aaa", "bbbb", "ccccc","dddddd"]
+
+        const cadenaMasLarga = (arr) => {
+            let palabra = "";
+            let letras = 0;
+            for(cadena of cadenas){
+                if(cadena.length >= palabra.length){
+                    palabra = cadena;
+                    letras = cadena.length;
+                }
+            }
+            return `La cadena mas larga es ${palabra} y tiene ${letras} letras.`;
+        }
+
+        console.log(cadenaMasLarga(cadenas));
+    </script>
+  </body>
+</html>

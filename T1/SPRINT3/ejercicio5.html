@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset=utf-8>
+    <title>Ejercicio 5</title>
+    <style>
+        th{
+            cursor: pointer;
+            text-align: center;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+   </head>
+  <body>
+    <header>
+        <h1>Ejercicio 5</h1>
+        <h2>Ordenamiento interactivo de tabla de personas</h2>
+    <hr>
+    </header>
+    <form action="table">
+        <script src="ejercicio5.js"></script>
+        <table>
+            <thead>
+                <tr>
+                    <th onclick="nom()">Nombre</th>
+                    <th onclick="edad()">Edad</th>
+                    <th onclick="dni()">DNI</th>
+                    <th onclick="hijo()">Hijos</th>
+                    <th onclick="naci()">Fecha de nacimiento</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </form>
+  </body>
+</html>
