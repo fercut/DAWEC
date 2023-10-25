@@ -2,7 +2,7 @@
 <html> 
   <head>
     <meta charset=utf-8>
-    <title>Ejercicio 5</title>
+    <title>Ejercicio 6</title>
     <style>
         table{
             border: 1px solid black;
@@ -21,6 +21,7 @@
             font-weight: bold;
             padding: 10px;
             border-radius: 20px;
+            margin: 0px 10px 10px;
         }
     </style>
    </head>
@@ -51,13 +52,29 @@
             </tbody>
         </table>
     </form>
-    <button onclick="estudiantesDestacadosPorAsignatura()">Mejores estudiantes por asignatura</button>
+    <label for="">Cuales son los tres mejores estudiantes de la asignatura:</label>
+    <input type="text" width="200" id="estudiantesDestacados">
+    <button onclick="estudiantesDestacados()">Enviar</button>
+    <br>
     <button onclick="asignaturaMenorRendimiento()">Asignatura con menor rendimiento</button>
+    <br>
     <button onclick="mejoraNotasBeca()">Aumentar notas a becados</button>
-    <button onclick="filtrarPorCiudadYAsignatura()">Lista de estudiantes por ciudad y asignatura</button>
-    <button onclick="estudiantesSinBecaPorCiudad()">Numero de estudiantes sin beca</button>
+    <br>
+    <p>Lista de alumnos segun ciudad y ordenada por calificacion de determinada asignatura</p>
+    <label for="">Ciudad</label>
+    <input type="text" width="200" id="ciudadListaAsignatura">
+    <label for="Asignatura">Asignatura</label>
+    <input type="text" width="200" id="asignatura">
+    <button onclick="ciudadAsignatura()">Enviar</button>
+    <br>
+    <label for="alumnos sin beca">Alumnos sin beca en la ciudad: </label>
+    <input type="text" width="200" id="alumnosSinBeca">
+    <button onclick="estudiantesSinBeca()">Enviar</button>
+    <br>
     <button onclick="promedioEdadEstudiantesConBeca()">Media de edad de alumnos con beca</button>
+    <br>
     <button onclick="mejoresEstudiantes()">Mejores estudiantes</button>
+    <br>
     <button onclick="estudiantesAprobados()">Aprobados</button>
   </body>
 </html>
