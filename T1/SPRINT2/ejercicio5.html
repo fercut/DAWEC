@@ -7,7 +7,7 @@
 </head>
 <body>
     <button id="mainButton">Botón Principal</button>
-    <iframe id="myIframe" width="200" height="200" frameborder="0" src="data:text/html;charset=utf-8,<!DOCTYPE html>
+    <iframe id="myIframe" width="200" height="200" frameborder="0" srcdoc="<!DOCTYPE html>
         <html lang='en'>
         <head>
             <meta charset='UTF-8'>
@@ -16,6 +16,17 @@
         </head>
         <body>
             <button id='iframeButton'>Botón Iframe</button>
+            <script>
+                const iframe = document.getElementById('myIframe');
+
+                iframe.addEventListener('click', () => {
+                    const iframeButton = iframe.contentDocument.getElementById('iframeButton');
+                    iframeButton.addEventListener('click', (event) => {
+                        const xpath = getXPath(event.target);
+                        document.getElementById('input').value = xpath;
+                    });
+                });
+            </script>
         </body>
         </html>">
     </iframe>
@@ -39,15 +50,7 @@
             return segs(elemento).join('/');
         }
         
-        const iframe = document.getElementById('myIframe');
-
-        iframe.addEventListener('click', () => {
-            const iframeButton = iframe.contentDocument.getElementById('iframeButton');
-            iframeButton.addEventListener('click', (event) => {
-                const xpath = getXPath(event.target);
-                document.getElementById('input').value = xpath;
-            });
-        });
+        
         document.addEventListener('click', (event) => {
             const elemento = event.target;
             const xpath = getXPath(elemento);
