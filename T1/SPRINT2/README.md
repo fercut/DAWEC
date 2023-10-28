@@ -5,7 +5,7 @@
 
 :mag: Analisis del problema.
 ---
->Tenemos que resolver una serie de ejercicios en los que la solucion se mostrara de forma grafica o visible en el mismo documento, en este SPRINT al contrario que en el anterior, no se mostraran los resultados por consola o en.
+>Tenemos que resolver una serie de ejercicios en los que la solucion se mostrara de forma grafica o visible en el mismo documento, en este SPRINT al contrario que en el anterior, no se mostraran los resultados por consola o en un alert.
 
 <br/>
 
