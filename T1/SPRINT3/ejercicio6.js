@@ -143,6 +143,9 @@ function filtrarPorCiudadYAsignatura(ciudad, asignatura) {
     const tableBody = document.getElementById("tableBody");
     tableBody.innerHTML = '';
     
+    //ordena por notas
+    nombres.sort((a, b) => b.value - a.value);
+
     for(let i=0; i<nombres.length; i++){
         const row = document.createElement('tr');
         row.innerHTML = `

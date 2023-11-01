@@ -45,10 +45,10 @@ En todos ellos se implementaran los test correspondientes.
 
 **Ejercicio 5:** 
 
-<img src='./imagenes/ejercicio5test.gif'>
+<img src='./imagenes/ejercicio5test.png'>
 <img src='./imagenes/ejercicio5.gif'>
 
 **Ejercicio 6:** 
 
-<img src='./imagenes/ejercicio6test.gif'>
+<img src='./imagenes/ejercicio6test.png'>
 <img src='./imagenes/ejercicio6.gif'>
