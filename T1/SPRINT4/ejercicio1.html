@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Pokemon</title>
+</head>
+<body>
+    <div>
+       <h1>Información Básica del Pokémon</h1>
+       <hr>
+       <label for="pokemon">Nombre del pokemon</label>
+       <input type="text" id="nomPoke" width="200">
+       <button onclick="info()">Obtener informacion</button>
+    </div>
+    <div id="pokemonInfo"></div>
+    <script>
+        const info = async() => { 
+            const nomPoke = document.getElementById('nomPoke').value.toLowerCase();
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon/${nomPoke}/`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const { name, id, types, sprites } = await response.json();
+
+                const pokemonInfo = `
+                <h2>${name}</h2>
+                <p>ID: ${id}</p>
+                <p>Tipo: ${types.map(type => type.type.name).join(', ')}</p>
+                <img src="${sprites.front_default}" alt="${name}">
+                `;
+        
+                document.getElementById('pokemonInfo').innerHTML = pokemonInfo;
+              } catch (error) {
+                console.error('Error al obtener la información del Pokémon:', error);
+                document.getElementById('pokemonInfo').innerHTML = '<p>Ha puesto mal el nombre o pokemon inexistente</p>';
+              }
+        }
+    </script>
+</body>
+</html>

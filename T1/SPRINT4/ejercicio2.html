@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparación de Pokémon</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Comparación de Pokémon</h1>
+
+  <form id="pokemonForm">
+    <label for="pokemon1">Primer Pokémon:</label>
+    <input type="text" id="pokemon1" required>
+    <label for="pokemon2">Segundo Pokémon:</label>
+    <input type="text" id="pokemon2" required>
+    <button type="button" onclick="comparePokemonStats()">Comparar Pokémon</button>
+  </form>
+
+  <div id="pokemonComparison"></div>
+
+  <script>
+    async function comparePokemonStats() {
+      const pokemon1Name = document.getElementById('pokemon1').value.toLowerCase();
+      const pokemon2Name = document.getElementById('pokemon2').value.toLowerCase();
+
+      const apiUrl1 = `https://pokeapi.co/api/v2/pokemon/${pokemon1Name}/`;
+      const apiUrl2 = `https://pokeapi.co/api/v2/pokemon/${pokemon2Name}/`;
+
+      try {
+        const [pokemon1, pokemon2] = await Promise.all([
+          fetch(apiUrl1).then(response => response.json()),
+          fetch(apiUrl2).then(response => response.json())
+        ]);
+
+        // Construir la tabla comparativa
+        const comparisonTable = `
+          <h2>Comparación de Estadísticas de Pokémon</h2>
+          <table>
+            <tr>
+              <th>Estatística</th>
+              <th>${pokemon1.name}</th>
+              <th>${pokemon2.name}</th>
+            </tr>
+            ${Object.entries(pokemon1.stats).map(([stat, value]) => `
+              <tr>
+                <td>${stat}</td>
+                <td>${value.base_stat}</td>
+                <td>${pokemon2.stats.find(s => s.stat.name === stat).base_stat}</td>
+              </tr>
+            `).join('')}
+          </table>
+        `;
+
+        // Mostrar la tabla en el DOM
+        document.getElementById('pokemonComparison').innerHTML = comparisonTable;
+      } catch (error) {
+        console.error('Error al comparar Pokémon:', error);
+        document.getElementById('pokemonComparison').innerHTML = '<p>Error al comparar Pokémon.</p>';
+      }
+    }
+  </script>
+
+</body>
+</html>
