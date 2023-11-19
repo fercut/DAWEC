@@ -1,14 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Pokemon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador de Películas</title>
+  <link rel="stylesheet" href="style4.css">
 </head>
 <body>
-    <div>
-       <h1>Información Básica del Pokémon</h1>
-        <hr> 
-    </div>
+
+  <h1>Explorador de Películas</h1>
+  
+  <div id="search-container">
+    <label for="search-input">Buscar por título:</label>
+    <input type="text" id="search-input" placeholder="Ingrese el título...">
+    <button id="search-button" onclick="searchMovies()">Buscar</button>
+  </div>
+
+  <div>
+    <label for="genre">Género:</label>
+    <select id="genre">
+      <option value="28">Acción</option>
+      <option value="35">Comedia</option>
+      <option value="18">Drama</option>
+      <option value="27">Terror</option>
+      <option value="878">Ciencia ficción</option>
+      <option value="53">Suspense</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="topRated">Mejor Valoradas:</label>
+    <select id="topRated">
+      <option value="false">No</option>
+      <option value="true">Sí</option>
+    </select>
+  </div>
+
+  <button onclick="showMovies()">Mostrar</button>
+
+  <div id="movies-container"></div>
+
+  <div id="load-more">Ver más</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script4.js"></script>
 </body>
 </html>

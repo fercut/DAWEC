@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Películas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #search-container {
+      margin-top: 20px;
+    }
+
+    #search-input {
+      padding: 8px;
+    }
+
+    #search-button {
+      padding: 8px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #movie-container {
+      margin-top: 20px;
+    }
+
+    .movie-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .movie-card img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Buscador de Películas</h1>
+
+  <div id="search-container">
+    <label for="search-input">Buscar por título:</label>
+    <input type="text" id="search-input" placeholder="Ingrese el título...">
+    <button id="search-button" onclick="searchMovie()">Buscar</button>
+  </div>
+
+  <div id="movie-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const apiKey = '7f89696ff75b02d3ab311e1925fdfc79';
+    const searchInput = document.getElementById('search-input');
+    const movieContainer = document.getElementById('movie-container');
+
+    async function searchMovie() {
+      try {
+        const searchTerm = searchInput.value.trim();
+
+        if (searchTerm === '') {
+          alert('Por favor, ingrese un título de película.');
+          return;
+        }
+
+        // Limpiar el contenedor antes de mostrar los resultados
+        movieContainer.innerHTML = '';
+
+        const apiUrl = 'https://api.themoviedb.org/3/search/movie';
+
+        const response = await axios.get(apiUrl, {
+          params: {
+            api_key: apiKey,
+            query: searchTerm,
+            language: 'es', // Establece el idioma a español
+          },
+        });
+
+        const movies = response.data.results;
+
+        if (movies.length === 0) {
+          alert('No se encontraron películas con ese título.');
+          return;
+        }
+
+        // Mostrar la primera película encontrada
+        const firstMovie = movies[0];
+        displayMovie(firstMovie);
+
+      } catch (error) {
+        console.error('Error al obtener datos de la API:', error.message);
+      }
+    }
+
+    function displayMovie(movie) {
+      const movieCard = document.createElement('div');
+      movieCard.className = 'movie-card';
+      movieCard.innerHTML = `
+        <h3>${movie.title}</h3>
+        <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+        <p>Año: ${movie.release_date ? movie.release_date.substring(0, 4) : 'N/A'}</p>
+        <p>${movie.overview}</p>
+        <p>Valoración: ${movie.vote_average}</p>
+      `;
+      movieContainer.appendChild(movieCard);
+    }
+  </script>
+</body>
+</html>
