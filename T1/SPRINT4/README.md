@@ -28,21 +28,21 @@
 **Ejercicio 1:**
 
 <img src='./imagenes/ejercicio1test.png'>
-<img src='./imagenes/ejercicio1.png'>
+<img src='./imagenes/ejercicio1.gif'>
 
 **Ejercicio 2:** 
 
 <img src='./imagenes/ejercicio2test.png'>
-<img src='./imagenes/ejercicio2.png'>
+<img src='./imagenes/ejercicio2.gif'>
 
 **Ejercicio 3:** 
 <img src='./imagenes/ejercicio3test.png'>
-<img src='./imagenes/ejercicio3.png'>
+<img src='./imagenes/ejercicio3.gif'>
 
 **Ejercicio 4:** 
 
 <img src='./imagenes/ejercicio4test.png'>
-<img src='./imagenes/ejercicio4.png'>
+<img src='./imagenes/ejercicio4.gif'>
 
 **Ejercicio 5:** 
 
