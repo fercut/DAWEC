@@ -20,6 +20,11 @@
     th {
       background-color: #f2f2f2;
     }
+
+    .check {
+      color: green;
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
@@ -50,6 +55,13 @@
           fetch(apiUrl2).then(response => response.json())
         ]);
 
+        // Calcular la suma de estadísticas para cada Pokémon
+        const sumStats1 = pokemon1.stats.reduce((sum, stat) => sum + stat.base_stat, 0);
+        const sumStats2 = pokemon2.stats.reduce((sum, stat) => sum + stat.base_stat, 0);
+
+        // Determinar cuál es el Pokémon con mejores estadísticas
+        const betterPokemon = sumStats1 > sumStats2 ? pokemon1 : pokemon2;
+
         // Construir la tabla comparativa
         const comparisonTable = `
           <h2>Comparación de Estadísticas de Pokémon</h2>
@@ -59,18 +71,23 @@
               <th>${pokemon1.name}</th>
               <th>${pokemon2.name}</th>
             </tr>
-            ${Object.entries(pokemon1.stats).map(([stat, value]) => `
-              <tr>
-                <td>${stat}</td>
-                <td>${value.base_stat}</td>
-                <td>${pokemon2.stats.find(s => s.stat.name === stat).base_stat}</td>
-              </tr>
-            `).join('')}
+            ${pokemon1.stats.map(stat => {
+              const stat2 = pokemon2.stats.find(s => s.stat.name === stat.stat.name);
+              return `
+                <tr>
+                  <td>${stat.stat.name}</td>
+                  <td>${stat.base_stat}</td>
+                  <td>${stat2 ? stat2.base_stat : 'N/A'}</td>
+                </tr>
+              `;
+            }).join('')}
           </table>
+          <div class="check">${betterPokemon.name} es mejor</div>
         `;
 
         // Mostrar la tabla en el DOM
         document.getElementById('pokemonComparison').innerHTML = comparisonTable;
+        
       } catch (error) {
         console.error('Error al comparar Pokémon:', error);
         document.getElementById('pokemonComparison').innerHTML = '<p>Error al comparar Pokémon.</p>';

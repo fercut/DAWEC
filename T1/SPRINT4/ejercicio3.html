@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de Evolución del Pokémon</title>
+  <style>
+    body {
+      background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+      padding: 20px;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    #evolutionDetails {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    .pokemonCard {
+      flex: 0 0 auto;
+      margin-right: 20px;
+      text-align: center;
+    }
+
+    form {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color: white;">Detalles de Evolución del Pokémon</h1>
+
+  <form id="pokemonForm">
+    <label for="pokemonName" style="color: black;">Nombre del Pokémon:</label>
+    <input type="text" id="pokemonName" required>
+    <button type="button" onclick="getEvolutionDetails()">Obtener Detalles de Evolución</button>
+  </form>
+
+  <div id="evolutionDetails"></div>
+
+  <script>
+    async function getEvolutionDetails() {
+      const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
+      const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName}/`;
+      const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`;
+
+      try {
+        const [speciesResponse, pokemonResponse] = await Promise.all([
+          fetch(speciesUrl),
+          fetch(pokemonUrl)
+        ]);
+
+        if (!speciesResponse.ok || !pokemonResponse.ok) {
+          throw new Error('No se encontraron detalles de evolución para el Pokémon ingresado.');
+        }
+
+        const speciesData = await speciesResponse.json();
+        const pokemonData = await pokemonResponse.json();
+
+        // Obtener la cadena de evolución
+        const evolutionChainUrl = speciesData.evolution_chain.url;
+        const evolutionChainResponse = await fetch(evolutionChainUrl);
+        const evolutionChainData = await evolutionChainResponse.json();
+
+        // Construir detalles de la evolución
+        const evolutionDetails = document.getElementById('evolutionDetails');
+        evolutionDetails.innerHTML = '';
+
+        await displayEvolutionChain(evolutionChainData.chain, pokemonName);
+
+      } catch (error) {
+        console.error('Error al obtener detalles de evolución:', error);
+        document.getElementById('evolutionDetails').innerHTML = `<p style="color: black;">${error.message}</p>`;
+      }
+    }
+
+    async function displayEvolutionChain(evolutionStage, pokemonName) {
+      const evolutionDetails = document.getElementById('evolutionDetails');
+      
+      const evolutionStageDetails = await getPokemonDetails(evolutionStage.species.name);
+
+      const ataque = evolutionStageDetails.stats.find(stat => stat.stat.name === 'attack').base_stat;
+      const defensa = evolutionStageDetails.stats.find(stat => stat.stat.name === 'defense').base_stat;
+      const velocidad = evolutionStageDetails.stats.find(stat => stat.stat.name === 'speed').base_stat;
+      const ataqueEspecial = evolutionStageDetails.stats.find(stat => stat.stat.name === 'special-attack').base_stat;
+      const defensaEspecial = evolutionStageDetails.stats.find(stat => stat.stat.name === 'special-defense').base_stat;
+      const hp = evolutionStageDetails.stats.find(stat => stat.stat.name === 'hp').base_stat;
+
+      evolutionDetails.innerHTML += `
+        <div class="pokemonCard">
+          <p>Forma Evolutiva: ${capitalizeFirstLetter(evolutionStage.species.name)}</p>
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${evolutionStage.species.url.split('/').slice(-2, -1)}.png" alt="${evolutionStage.species.name}">
+          <p>Estadísticas Especiales:</p>
+          <ul>
+            <li>Ataque: ${ataque}</li>
+            <li>Defensa: ${defensa}</li>
+            <li>Velocidad: ${velocidad}</li>
+          </ul>
+          <button onclick="showDetails('${evolutionStage.species.name}', ${hp}, ${ataqueEspecial}, ${defensaEspecial})">
+            Mas detalles
+          </button>
+        </div>
+      `;
+
+      if (evolutionStage.evolves_to.length > 0) {
+        await Promise.all(evolutionStage.evolves_to.map(async nextStage => {
+          await displayEvolutionChain(nextStage, pokemonName);
+        }));
+      }
+    }
+
+    function showDetails(speciesName, hp, ataqueEspecial, defensaEspecial) {
+    const message = `
+      Las habilidades especiales de ${speciesName} son:
+        HP: ${hp}
+        Ataque especial: ${ataqueEspecial}
+        Defensa especial: ${defensaEspecial}
+    `;
+    alert(message);
+  }
+
+    async function getPokemonDetails(pokemonName) {
+      const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`;
+      const response = await fetch(pokemonUrl);
+      return await response.json();
+    }
+
+    function capitalizeFirstLetter(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+  </script>
+
+</body>
+</html>
