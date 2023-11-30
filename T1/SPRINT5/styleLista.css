@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(46, 43, 43);
+    color: aliceblue;
+
+}
+h1{
+    text-align: center;
+}
+
+div{
+    display: flex;
+}
+nav{
+    flex: 1;
+    padding: 20px;
+}
+section{
+    flex: 4;
+    padding: 20px;
+}
+
+button{
+    color: aliceblue;
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+button:hover{
+    background-color: rgb(65, 61, 61);
+}
