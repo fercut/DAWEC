@@ -66,19 +66,21 @@ https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_Jav
 
 :mag: Analisis del problema.
 ---
->
+>En el transcurso de este quinto sprint, nos proponemos abordar la resolución de cinco ejercicios desarrollados en Typescript, los 3 primeros seran estaticos y mostraran su resultado por consola. Los dos siguientes seran dinamicos lo cual tendremos que interactuar con ellos.
 <br/>
 
 ✏️Diseño de la solucion.
 ---
->
+>Generaremos cinco ficheros con formato TypeScript en la ruta del proyecto /src. El transpilador configurado previamente creara la ruta /dist y almacenara en ella los ficheros .js.
+Luego ejecutaremos los tres primeros mediante node en el terminal y los dos restantes mediante un archivo HTML con sus correspondientes ficheros vinculados de CSS y JS.
+
 
 <br/>
 
 📝 Implementación de la solución.
 ---
 
->
+>Produciremos un video para cada ejercicio, aunque tres de ellos sean estaticos, el video mostrara la correcta transpilacion en tiempo real y su ejecucion mediante el terminal.Cabe destacar que este enfoque se basa en un plan de pruebas adjunto, el cual guía la secuencia y la evaluación de cada actividad de manera sistemática, garantizando así una implementación coherente y efectiva de los ejercicios propuestos.
 
 <br/>
 
@@ -87,3 +89,24 @@ https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_Jav
 
 **Ejercicio 1:**
 
+<img src='./imagenes/ejercicio1test.png'>
+<img src='./imagenes/ejercicio1.gif'>
+
+**Ejercicio 2:** 
+
+<img src='./imagenes/ejercicio2test.png'>
+<img src='./imagenes/ejercicio2.gif'>
+
+**Ejercicio 3:** 
+<img src='./imagenes/ejercicio3test.png'>
+<img src='./imagenes/ejercicio3.gif'>
+
+**Ejercicio 4:** 
+
+<img src='./imagenes/ejercicio4test.png'>
+<img src='./imagenes/ejercicio4.gif'>
+
+**Ejercicio 5:** 
+
+<img src='./imagenes/ejercicio5test.png'>
+<img src='./imagenes/ejercicio5.gif'>
