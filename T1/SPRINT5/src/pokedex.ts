@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     displayPokemonInfo(data);
                 } catch (error) {
                     console.error('Error fetching data:', error);
-                    displayError('Error inesperado. Intenta de nuevo más tarde.');
+                    displayError('Error: Pokemon inexistente.');
                 }
             } else {
                 // Manejar el caso de entrada vacía
@@ -46,7 +46,7 @@ async function getPokemonInfo(nameOrId: string) {
         displayPokemonInfo(data);
     } catch (error) {
         console.error('Error fetching data:', error);
-        displayError('Error inesperado. Intenta de nuevo más tarde.');
+        displayError('Error: Pokémon inexistente.');
     }
 }
 
@@ -93,7 +93,7 @@ function displayError(errorMessage: string) {
         // Mostrar mensaje de error
         const errorParagraph = document.createElement('p');
         errorParagraph.textContent = errorMessage;
-        errorParagraph.style.color = 'red';
+        errorParagraph.style.fontSize = '10px';
         infoDiv.appendChild(errorParagraph);
     }
 }
