@@ -1,5 +1,5 @@
 "use strict";
 function saludo(nombre, edad) {
-    return "Hola! me llamo ".concat(nombre, " y tengo ").concat(edad, " a\u00F1os");
+    return `Hola! me llamo ${nombre} y tengo ${edad} años`;
 }
 console.log(saludo('Fermin', 34));
