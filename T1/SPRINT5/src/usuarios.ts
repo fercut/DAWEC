@@ -4,7 +4,6 @@ interface Usuario {
     correo: string;
 }
 
-
 function datos(usuario: Usuario): string {
   return `El usuario ${usuario.nombre} tiene ${usuario.edad} años y su correo es ${usuario.correo}`;
 }
