@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('./font/PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'Press Start 2P', cursive;
+}
+
+header {
+    text-align: center;
+    color: rgb(255, 0, 0);
+    position: relative; /* Agregamos posición relativa al header */
+}
+
+.container {
+    float: right;
+}
+
+#search {
+    width: 295px;
+    height: 95px;
+    background-color: #453132;
+    position: absolute;
+    top: 325px;
+    left: 1030px;
+    color: white;
+    padding-left: 10px;
+}
+
+#imagen {
+    width: 260px;
+    height: 205px;
+    background-color: #453132;
+    position: absolute;
+    top: 340px;
+    left: 600px;
+    display: grid;
+    place-items: center;
+}
+
+#info {
+    width: 210px;
+    height: 120px;
+    background-color: #6ba66e;
+    position: absolute;
+    top: 700px;
+    left: 545px;
+    border-radius: 8px;
+    font-size: 8px;
+    padding: 5px;
+}
+
+input{
+    font-family: inherit;
+    background-color: #453132;
+    color: white; 
+    border: none;
+    outline: none;
+}
+
+button{
+    width: 200px;
+    height: 55px;
+    position: absolute;
+    top: 610px;
+    left: 1025px;
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    background-color: #f5f550;
+    border-radius: 6px;
+}

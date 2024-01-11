@@ -1,28 +1,28 @@
 "use strict";
 function datos(usuario) {
-    return "El usuario ".concat(usuario.nombre, " tiene ").concat(usuario.edad, " a\u00F1os y su correo es ").concat(usuario.correo);
+    return `El usuario ${usuario.nombre} tiene ${usuario.edad} años y su correo es ${usuario.correo}`;
 }
-var usuario1 = {
+const usuario1 = {
     nombre: 'Juan',
     edad: 25,
     correo: 'juan@gmail.com',
 };
-var usuario2 = {
+const usuario2 = {
     nombre: 'María',
     edad: 30,
     correo: 'maria@gmail.com',
 };
-var usuario3 = {
+const usuario3 = {
     nombre: 'Pedro',
     edad: 22,
     correo: 'pedro@gmail.com',
 };
-var usuario4 = {
+const usuario4 = {
     nombre: 'Fermin',
     edad: 33,
     correo: 'fermin@gmail.com',
 };
-var usuario5 = {
+const usuario5 = {
     nombre: 'Alvaro',
     edad: 62,
     correo: 'alvaro@gmail.com',
