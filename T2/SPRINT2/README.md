@@ -1,97 +1,15 @@
 
 <center>
 
-# SPRINT 1
+# SPRINT 2
 
 ---
 ## React   
-<img src="./Documentacion/react.gif" alt="Typescript" width="250">
+<img src="./Documentacion/react.gif" alt="react" width="250">
 
 <br/>
 
-🕵️‍♂️ Comparativa entre React Vs Angular
----
 </center>
-
->#### Lenguaje:
->**React:** Utiliza JavaScript (también JSX).
->**Angular:** Utiliza TypeScript (superset de JavaScript).
-
-<br/>
-
->#### Arquitectura:
->**React:** Es una biblioteca para construir interfaces de usuario.
->**Angular:** Es un framework MVC (Model-View-Controller) completo.
-
-<br/>
-
->#### Tamaño:
->**React:** Más liviano y flexible, el desarrollador decide las bibliotecas adicionales.
->**Angular:** Mayor tamaño debido a su estructura más completa.
-
-<br/>
-
->#### DOM Virtual:
->**React:** Utiliza un DOM virtual para optimizar las actualizaciones del DOM.
->**Angular:** Utiliza un DOM virtual incorporado.
-
-<br/>
-
->#### Sintaxis:
->**React:** Más sencilla y basada en JavaScript.
->**Angular:** Más declarativa y basada en TypeScript.
-
-<br/>
-    
->#### Curva de Aprendizaje:
->**React:** Menos empinada.
->**Angular:** Mayor, ya que es un framework más completo.
-
-<br/>
-
->#### Flexibilidad:
->**React:** Permite elegir herramientas adicionales y bibliotecas.
->**Angular:** Menos flexible, pero proporciona un conjunto integrado de herramientas.
-
-<br/>
-
->#### Rendimiento:
->**React:** Mayor control sobre el rendimiento.
->**Angular:** Mayor cantidad de abstracciones puede afectar el rendimiento.
-
-<br/>
-
->#### Comunidad:
->**React:** Gran comunidad y ecosistema.
->**Angular:** Comunidad sólida respaldada por Google.
-
-<br/>
-
->#### Empresas que lo Utilizan:
->**React:** Facebook, Instagram, Airbnb.
->**Angular:** Google, Microsoft, IBM.
-
-<br/>
-
->###Ventajas e inconvenientes de React:
->**Ventajas:**
->Flexibilidad y libertad de elección.
->Buena integración con otras bibliotecas y frameworks.
->Gran comunidad y recursos disponibles.
->
->**Inconvenientes:**
->Mayor responsabilidad en la toma de decisiones.
->Necesidad de elegir herramientas adicionales.
-
->#### Ventajas e inconvenientes de Angular:
->**Ventajas:**
->Estructura más completa y opinionada.
->TypeScript proporciona verificación de tipos.
->Mayor consistencia en grandes proyectos.
->
->**Inconvenientes:**
->Mayor curva de aprendizaje.
->Mayor tamaño y complejidad en proyectos pequeños.
 
 
 <center>
@@ -127,8 +45,11 @@
 
 <br/>
 
+<center>
+
 ✅Pruebas
 ---
+</center>
 
 #### Ejercicio 1:
 
