@@ -41,7 +41,29 @@
 ---
 </center>
 
->La implementación de la solución incluirá la creación de un video para cada ejercicio, siguiendo el plan de pruebas para validar el correcto funcionamiento de los proyectos. En el ejercicio 5 (Lista de Tareas), se utilizará localStorage del navegador para garantizar la persistencia de datos localmente. Además, se realizará el despliegue en Azure, asegurando que la aplicación pueda ser utilizada en cualquier PC sin perder las listas de tareas almacenadas localmente. (https://fermintestapp.azurewebsites.net)
+>En este punto, detallaremos la implementación de cada ejercicio:
+
+    Ejercicio 1: formulario de registro con validaciones:
+        Se desarrollará un formulario de registro con campos validados.
+        Se aplicarán validaciones en cada campo para garantizar la entrada de datos correcta.
+
+    Ejercicio 2: cronómetro con funcionalidades avanzadas:
+        Se creará un cronómetro con opciones de inicio, pausa y reinicio.
+        Se incluirá un modo de entrenamiento de boxeo o series, con intervalos de 2 minutos de ejercicio y 30 segundos de descanso.
+        Sonarán alarmas distintas para indicar los momentos de descanso y actividad.
+
+    Ejercicio 3: lista de tareas con Local Storage (Componentes de Clase):
+        Desarrollo de una lista de tareas que utilizará Local Storage para almacenar datos.
+        Implementación mediante componentes de clase.
+
+    Ejercicio 4: galería de Imágenes con Modal Emergente:
+        Creación de una galería de imágenes con un modal que se activará al hacer clic en una imagen.
+
+    Ejercicio 5: galería de imágenes con barra de búsqueda y paginación:
+        Extensión de la galería de imágenes con una barra de búsqueda y un grid que carga más imágenes al llegar al final.
+        Integración de un modal que permite navegar entre imágenes y se cerrará con la tecla "ESC".
+
+Esta implementación se llevará a cabo de manera dinámica, y cada ejercicio será sometido a pruebas exhaustivas para garantizar su correcto funcionamiento y la satisfacción de los requerimientos específicos de cada uno. El proceso completo se mostrará en un video que incluirá un plan de pruebas detallado.
 
 <br/>
 
