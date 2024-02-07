@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Navbar from './Navbar';
+import Modal from './Modal-img';
 
 class GaleriaImagenes extends Component {
   constructor(props) {
@@ -15,7 +17,18 @@ class GaleriaImagenes extends Component {
   componentDidMount() {
     this.fetchImages();
     this.addScrollListener();
+    document.addEventListener('keydown', this.handleKeyDown);
   }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      this.handleCloseModal();
+    }
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchTerm !== this.state.searchTerm) {
@@ -104,15 +117,11 @@ class GaleriaImagenes extends Component {
 
     return (
       <div>
-        <header>
-          <h1>BUSCADOR DE IMAGENES</h1>
-          <input
-            type="text"
-            placeholder="Buscar imágenes..."
-            value={searchTerm}
-            onChange={this.handleSearchChange}
-          />
-        </header>
+        <Navbar
+          searchTerm={searchTerm}
+          handleSearchChange={this.handleSearchChange}
+          handleSearch={this.handleSearch}
+        />
         <div style={{ display: 'flex', flexWrap: 'wrap' }} className='images'>
           {images.map((image, index) => (
             <img
@@ -125,16 +134,12 @@ class GaleriaImagenes extends Component {
           ))}
         </div>
         {selectedImageIndex !== null && (
-          <div className='modal'>
-            <button onClick={() => this.handleNavigate('prev')} style={{ position: 'absolute', top: '50%', left: 10, transform: 'translateY(-50%)' }}>{'<'}</button>
-            <button onClick={() => this.handleNavigate('next')} style={{ position: 'absolute', top: '50%', right: 10, transform: 'translateY(-50%)' }}>{'>'}</button>
-            <button onClick={this.handleCloseModal} style={{ position: 'absolute', top: 10, right: 10 }}>X</button>
-            <img
-              src={images[selectedImageIndex].urls.regular}
-              alt={images[selectedImageIndex].alt_description}
-              style={{ maxWidth: '80%', maxHeight: '80%' }}
-            />
-          </div>
+          <Modal
+            handleCloseModal={this.handleCloseModal}
+            handleNavigate={this.handleNavigate}
+            selectedImageIndex={selectedImageIndex}
+            images={images}
+          />
         )}
       </div>
     );
