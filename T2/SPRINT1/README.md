@@ -5,7 +5,7 @@
 
 ---
 ## React   
-<img src="./Documentacion/react.gif" alt="Typescript" width="250">
+<img src="./Documentacion/react.gif" alt="react" width="250">
 
 <br/>
 
