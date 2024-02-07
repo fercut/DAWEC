@@ -18,7 +18,7 @@
 ---
 </center>
 
->En el transcurso de este primer sprint del segundo trimestre, nos proponemos abordar la resolución de cinco ejercicios desarrollados cada uno de ellos como proyectos independientes de React, el primero sera un ejercicio estatico (hola mundo y saludo personalizado con props) y mostrara su resultado en el navegador de manera estatica. Los cuatro siguientes seran dinamicos, con lo cual tendremos que interactuar con ellos mediante botones, desplegables o introduciendo textos.
+>En esta tarea, abordaremos cinco ejercicios de manera dinámica. Cada ejercicio será sometido a pruebas exhaustivas que se detallarán en el último punto del informe. Se presentará un video que demostrará la ejecución de los ejercicios y se proporcionará un plan de pruebas detallado para evaluar la funcionalidad y robustez de cada solución. Este enfoque garantizará una comprensión completa y una evaluación rigurosa de cada ejercicio.
 <br/>
 <center>
 
@@ -28,9 +28,9 @@
 
 >Para cada uno de los 5 ejercicios, generaremos un proyecto React utilizando el comando "npx create-react-app ejercicioX". A continuación, configuraremos la estructura de carpetas añadiendo las rutas components y resources para organizar los elementos de manera clara. 
 >
->Dentro de la carpeta components, crearemos los componentes necesarios para cada ejercicio con la extencion .jsx. Cada componente será exportado desde su respectivo archivo para facilitar la importación en otros componentes. 
+>Dentro de la carpeta components, crearemos los componentes necesarios para cada ejercicio con la extencion ".jsx". Cada componente será exportado desde su respectivo archivo para facilitar la importación en otros componentes o en la propia App. 
 >
->En el archivo App.js, importaremos y utilizarémos los componentes necesarios para cada ejercicio. En particular, en el ejercicio 1, haremos uso de props para la comunicación entre componentes.
+>En el archivo App.js, importaremos y utilizarémos los componentes necesarios para cada ejercicio.
 >
 >Este enfoque modular y organizado nos permitirá mantener un código limpio y fácil de mantener a medida que avanzamos en cada ejercicio del proyecto.
 <br/>
@@ -63,7 +63,8 @@
 
 #### Ejercicio 3:
 <img src='./Documentacion/ejercicio3test.png' width="100%">
-<img src='./Documentacion/ejercicio3.gif' width="100%">
+<img src='./Documentacion/ejercicio3.1.gif' width="100%">
+<img src='./Documentacion/ejercicio3.2.gif' width="100%">
 
 #### Ejercicio 4:
 
