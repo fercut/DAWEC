@@ -49,7 +49,8 @@
 
     Ejercicio 2: cronómetro con funcionalidades avanzadas:
         Se creará un cronómetro con opciones de inicio, pausa y reinicio.
-        Se incluirá un modo de entrenamiento de boxeo o series, con intervalos de 2 minutos de ejercicio y 30 segundos de descanso.
+        Se incluirá un modo de entrenamiento de boxeo o series, con intervalos de 2 minutos 
+        de ejercicio y 30 segundos de descanso.
         Sonarán alarmas distintas para indicar los momentos de descanso y actividad.
 
     Ejercicio 3: lista de tareas con Local Storage (Componentes de Clase):
@@ -57,10 +58,12 @@
         Implementación mediante componentes de clase.
 
     Ejercicio 4: galería de Imágenes con Modal Emergente:
-        Creación de una galería de imágenes con un modal que se activará al hacer clic en una imagen.
+        Creación de una galería de imágenes con un modal que se activará al hacer clic en una 
+        imagen.
 
     Ejercicio 5: galería de imágenes con barra de búsqueda y paginación:
-        Extensión de la galería de imágenes con una barra de búsqueda y un grid que carga más imágenes al llegar al final.
+        Extensión de la galería de imágenes con una barra de búsqueda y un grid que carga 
+        más imágenes al llegar al final.
         Integración de un modal que permite navegar entre imágenes y se cerrará con la tecla "ESC".
 
 Esta implementación se llevará a cabo de manera dinámica, y cada ejercicio será sometido a pruebas exhaustivas para garantizar su correcto funcionamiento y la satisfacción de los requerimientos específicos de cada uno. El proceso completo se mostrará en un video que incluirá un plan de pruebas detallado.
